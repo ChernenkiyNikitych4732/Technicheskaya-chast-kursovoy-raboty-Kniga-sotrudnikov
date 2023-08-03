@@ -1,67 +1,61 @@
-import java.util.Objects;
-
 public class Employee {
     private static int idCounter = 1;
-    private final int id;
-    private final String name;
-    private final String middleName;
-    private final String surname;
+    private final String firstname;
+    private int id;
+    private String name;
+    private String middlename;
+    private String surname;
     private int otdel;
     private int salary;
 
+    private String surName;
+    private String firstName;
 
-    public Employee(String name, String middleName, String surname, int otdel, int salary) {
-        this.id = idCounter++;
-        this.name = name;
-        this.middleName = middleName;
+    private int department;
+
+    private static int counter = 1;
+
+    public Employee(String surname, String firstname, String middleName, int department, int salary) {
+        this.surname = surname;
+        this.firstname = firstname;
+        this.middlename = middlename;
         this.surname = surname;
         this.otdel = otdel;
+        this.department = department;
         this.salary = salary;
+        this.id = counter++;
     }
-
-    public String getName() {
-        return name;
-    }
-
-    public String getMiddleName() {
-        return middleName;
-    }
-
-    public String getSurname() {
+    public String getsurname() {
         return surname;
     }
 
-    public int getOtdel() {
-        return otdel;
+    public String getname() {
+        return name;
     }
 
-    public int getSalary() {
+    public String getmiddlename() {
+        return middlename;
+    }
+
+    public int getsalary() {
         return salary;
     }
 
-    public void setOtdel(int otdel) {
-        this.otdel = otdel;
-    }
-
-    public void setSalary(int salary) {
-        this.salary = salary;
+    public int getdepartment(){
+        return department;
     }
 
     public int getId() {
         return id;
     }
 
-    @Override
-    public String toString() {
-        return "ID сотрудника " + getId() +
-                " Ф.И.О. = " + name +
-                " " + middleName +
-                " " + surname +
-                ", Отдел = " + otdel +
-                ", Зарплата = " + salary;
+    public float getsalary(int increaseSalary) {
+        return 0;
     }
-    @Override
-    public int hashCode() {
-        return Objects.hash(name, middleName, surname, otdel, salary, id);
+
+    public int setSalary(int increaseSalary) {
+        return 0;
     }
 }
+
+
